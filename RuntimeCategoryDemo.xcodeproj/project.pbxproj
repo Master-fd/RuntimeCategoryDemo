@@ -14,6 +14,8 @@
 		1BC1A7991D3E69EC006705F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1A7981D3E69EC006705F6 /* Images.xcassets */; };
 		1BC1A79C1D3E69EC006705F6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1A79A1D3E69EC006705F6 /* LaunchScreen.xib */; };
 		1BC1A7A81D3E69EC006705F6 /* RuntimeCategoryDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1A7A71D3E69EC006705F6 /* RuntimeCategoryDemoTests.m */; };
+		1BC1A7B41D3E6BAE006705F6 /* FDTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1A7B31D3E6BAE006705F6 /* FDTestModel.m */; };
+		1BC1A7B71D3E6BCE006705F6 /* FDTestModel+FDCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1A7B61D3E6BCE006705F6 /* FDTestModel+FDCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,11 @@
 		1BC1A7A11D3E69EC006705F6 /* RuntimeCategoryDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RuntimeCategoryDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BC1A7A61D3E69EC006705F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BC1A7A71D3E69EC006705F6 /* RuntimeCategoryDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeCategoryDemoTests.m; sourceTree = "<group>"; };
+		1BC1A7B11D3E6A43006705F6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		1BC1A7B21D3E6BAE006705F6 /* FDTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTestModel.h; sourceTree = "<group>"; };
+		1BC1A7B31D3E6BAE006705F6 /* FDTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTestModel.m; sourceTree = "<group>"; };
+		1BC1A7B51D3E6BCE006705F6 /* FDTestModel+FDCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FDTestModel+FDCategory.h"; sourceTree = "<group>"; };
+		1BC1A7B61D3E6BCE006705F6 /* FDTestModel+FDCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FDTestModel+FDCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +92,15 @@
 				1BC1A7901D3E69EC006705F6 /* AppDelegate.m */,
 				1BC1A7921D3E69EC006705F6 /* ViewController.h */,
 				1BC1A7931D3E69EC006705F6 /* ViewController.m */,
+				1BC1A7B21D3E6BAE006705F6 /* FDTestModel.h */,
+				1BC1A7B31D3E6BAE006705F6 /* FDTestModel.m */,
+				1BC1A7B51D3E6BCE006705F6 /* FDTestModel+FDCategory.h */,
+				1BC1A7B61D3E6BCE006705F6 /* FDTestModel+FDCategory.m */,
 				1BC1A7951D3E69EC006705F6 /* Main.storyboard */,
 				1BC1A7981D3E69EC006705F6 /* Images.xcassets */,
 				1BC1A79A1D3E69EC006705F6 /* LaunchScreen.xib */,
 				1BC1A78B1D3E69EC006705F6 /* Supporting Files */,
+				1BC1A7B11D3E6A43006705F6 /* PrefixHeader.pch */,
 			);
 			path = RuntimeCategoryDemo;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 		1BC1A7801D3E69EC006705F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FD;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = asus;
 				TargetAttributes = {
@@ -222,6 +235,8 @@
 				1BC1A7941D3E69EC006705F6 /* ViewController.m in Sources */,
 				1BC1A7911D3E69EC006705F6 /* AppDelegate.m in Sources */,
 				1BC1A78E1D3E69EC006705F6 /* main.m in Sources */,
+				1BC1A7B41D3E6BAE006705F6 /* FDTestModel.m in Sources */,
+				1BC1A7B71D3E6BCE006705F6 /* FDTestModel+FDCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +362,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RuntimeCategoryDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = RuntimeCategoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,7 +374,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/RuntimeCategoryDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = RuntimeCategoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
